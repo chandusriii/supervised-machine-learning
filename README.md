@@ -1,31 +1,29 @@
 # Supervised Machine Learning
 
-A hands-on Python repository documenting practical experiments with supervised machine learning, focused on Support Vector Machines and Ensemble Learning. It is intended to be a beginner-friendly learning resource and a record of practical work.
+A hands-on Python repository for learning supervised machine learning through practical experiments, focused on Support Vector Machines and Ensemble Learning.
 
 ## Topics and notebooks
 
 ### Support Vector Machines
 
-- [SVC Implementation](Support-Vector-Machines/01_SVC_Implementation.ipynb) — classification with the Iris dataset, feature scaling, SVC evaluation, kernel experiments, and `C` comparisons.
-- [SVR Implementation](Support-Vector-Machines/02_SVR_Implementation.ipynb) — regression with the Diabetes dataset, kernel experiments, `GridSearchCV`, and `LinearSVR`.
-- [SVM concept notes](Support-Vector-Machines/README.md) — section guide, [introduction](Support-Vector-Machines/concepts/svm_introduction.md), [common kernels](Support-Vector-Machines/concepts/svm_kernels.md), and [hyperparameters](Support-Vector-Machines/concepts/svm_hyperparameters.md).
+- [SVC Implementation](Support-Vector-Machines/01_SVC_Implementation.ipynb) — Iris classification, feature scaling, classification metrics, Linear/Polynomial/RBF/Sigmoid kernels, and GridSearchCV.
+- [SVR Implementation](Support-Vector-Machines/02_SVR_Implementation.ipynb) — Diabetes regression, feature scaling, kernel comparisons, GridSearchCV, LinearSVR, MAE, RMSE, and R².
+- [SVM section guide](Support-Vector-Machines/README.md) | [Introduction](Support-Vector-Machines/concepts/svm_introduction.md) | [Kernels](Support-Vector-Machines/concepts/svm_kernels.md) | [Hyperparameters](Support-Vector-Machines/concepts/svm_hyperparameters.md)
 
 ### Ensemble Learning
 
-- [Random Forest and Bagging](Ensemble-Learning/01_Random_Forest_and_Bagging.ipynb) — Decision Tree, Random Forest with OOB evaluation, and Bagging Classifier experiments using the Titanic dataset.
-- [Ensemble concept notes](Ensemble-Learning/README.md) — section guide, [ensemble learning overview](Ensemble-Learning/concepts/ensemble_learning.md), [Bagging vs Boosting](Ensemble-Learning/concepts/bagging_vs_boosting.md), and [Decision Tree vs Random Forest](Ensemble-Learning/concepts/decision_tree_vs_random_forest.md).
+- [Random Forest and Bagging](Ensemble-Learning/01_Random_Forest_and_Bagging.ipynb) — Decision Tree baseline, Random Forest with OOB evaluation, and Bagging Classifiers using Titanic data.
+- [Ensemble section guide](Ensemble-Learning/README.md) | [Introduction](Ensemble-Learning/concepts/ensemble_learning.md) | [Bagging vs Boosting](Ensemble-Learning/concepts/bagging_vs_boosting.md) | [Decision Tree vs Random Forest](Ensemble-Learning/concepts/decision_tree_vs_random_forest.md)
 
-> **Status:** The notebooks are organized baseline implementations. They still require a full execution/review pass and some improvements noted during code review, including feature scaling for SVR, using the selected `GridSearchCV` estimator, and leakage-safe preprocessing for the Titanic example. Planned topics such as Bagging Regressor and a practical Boosting notebook are not implemented yet.
+## Learning goals
 
-## Learning objectives
+- Understand supervised classification and regression.
+- Explore SVM kernels and key hyperparameters.
+- Use cross-validation for model selection.
+- Understand Decision Trees, Random Forest, Bagging, Boosting, and out-of-bag evaluation.
+- Evaluate models with metrics appropriate to each task.
 
-- Understand classification and regression workflows.
-- Explore SVC and SVR, their kernels, and key hyperparameters.
-- Learn model selection using cross-validation and `GridSearchCV`.
-- Understand Decision Trees, Random Forest, Bagging, Boosting, and OOB evaluation.
-- Choose suitable evaluation metrics and build reproducible experiments.
-
-## Technologies
+## Technology stack
 
 Python, Jupyter Notebook, NumPy, Pandas, Scikit-learn, Matplotlib, and Seaborn.
 
@@ -54,28 +52,28 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
-Install dependencies and launch Jupyter:
+Install packages and launch Jupyter:
 
 ```bash
 python -m pip install -r requirements.txt
 jupyter notebook
 ```
 
-Open a notebook and run its cells in order. The Titanic notebook downloads its dataset via Seaborn, so it needs network access the first time it loads the dataset. Scikit-learn supplies the Iris and Diabetes datasets.
+Open a notebook and run its cells in order. The Iris and Diabetes datasets are provided by Scikit-learn. The Titanic dataset is loaded by Seaborn and may require internet access on first use.
 
-## Evaluation metrics
+## Implementation status
 
-The notebooks currently demonstrate accuracy and classification reports for classification, and R² for regression. Improvements planned include confusion matrices, MAE/RMSE for regression, and more consistent cross-validation-based comparisons.
+The repository includes SVC and SVR notebooks and a Random Forest/Bagging notebook. The SVM notebooks cover all four requested kernel types across the SVC examples, plus GridSearchCV. The ensemble notebook includes Decision Tree, Random Forest, OOB evaluation, and Bagging Classifier examples. Bagging Regressor and a practical Boosting notebook remain planned extensions rather than completed implementations.
+
+The notebooks are organized and have been improved for scaling, preprocessing, and model selection. They still need a full run-all-cells execution pass in a local environment before all results can be considered verified.
 
 ## Next improvements
 
-- Add the RBF kernel to the explicit SVC kernel comparison.
-- Put scaling and model fitting into Scikit-learn pipelines where appropriate.
-- Avoid using the test set repeatedly for hyperparameter choices.
-- Use `grid_search.best_estimator_` after GridSearchCV.
-- Add reproducible `random_state` settings and improve categorical preprocessing in the Titanic experiment.
+- Execute every notebook from top to bottom and capture clean outputs.
 - Add Bagging Regressor and Boosting examples.
+- Expand the comparison of classification and regression metrics.
+- Document feature importance and model interpretation.
 
 ## License
 
-See [LICENSE](LICENSE) for licensing terms.
+See [LICENSE](LICENSE) for license terms.
