@@ -1,11 +1,11 @@
 # Support Vector Machines
 
-This section contains practical SVC and SVR examples plus short concept notes.
+This section contains practical Support Vector Classification (SVC) and Support Vector Regression (SVR) examples, plus short concept notes.
 
 ## Notebooks
 
-- [SVC Implementation](01_SVC_Implementation.ipynb): Iris classification, scaling, classification metrics, four kernel experiments, and `GridSearchCV`.
-- [SVR Implementation](02_SVR_Implementation.ipynb): Diabetes regression, feature/target scaling, Linear and Polynomial kernels, cross-validated hyperparameter search, and LinearSVR.
+- [01 — SVC Implementation](01_SVC_Implementation.ipynb): Iris classification, feature scaling, classification metrics, four kernel experiments, and `GridSearchCV`.
+- [02 — SVR Implementation](02_SVR_Implementation.ipynb): Diabetes regression, feature and target scaling, Linear and Polynomial kernels, hyperparameter search, `LinearSVR`, MAE, RMSE, and R².
 
 ## Concept notes
 
@@ -13,9 +13,10 @@ This section contains practical SVC and SVR examples plus short concept notes.
 - [Common SVM kernels](concepts/svm_kernels.md)
 - [SVM hyperparameters](concepts/svm_hyperparameters.md)
 
-## Implementation notes
+## Practical guidance
 
-- Scale inputs for SVM models. The SVR notebook fits feature scaling on training data.
-- Use pipelines when cross-validating preprocessing to prevent data leakage.
-- Select hyperparameters through cross-validation on training data, then evaluate the selected estimator on held-out test data.
-- In SVR, the target is standardized for training and predictions can be inverse-transformed for MAE/RMSE in the original target units.
+- SVM models are sensitive to feature magnitudes; scaling numerical inputs is generally important.
+- Fit preprocessing only on training data. Use a pipeline when cross-validating so each fold learns its own preprocessing.
+- Tune hyperparameters on training data with cross-validation, then evaluate the selected estimator on held-out test data.
+- In the SVR notebook, the target is standardized for the experiment. Predictions are inverse-transformed for MAE and RMSE in the original target units.
+- R² is scale invariant when the target and predictions are transformed consistently.
