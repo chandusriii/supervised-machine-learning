@@ -10,6 +10,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: validate-notebooks-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   execute-notebooks:
     runs-on: ubuntu-latest
