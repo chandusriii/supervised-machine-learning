@@ -17,6 +17,14 @@ The goal is to keep the examples beginner-friendly while making the experiments 
 | [SVM kernels](Support-Vector-Machines/concepts/svm_kernels.md) | Linear, Polynomial, RBF, and Sigmoid kernels |
 | [SVM hyperparameters](Support-Vector-Machines/concepts/svm_hyperparameters.md) | C, gamma, degree, epsilon, and tuning workflow |
 
+### Unsupervised Learning
+
+| Notebook / Guide | What you'll learn |
+|---|---|
+| [Clustering fundamentals notebook](Unsupervised-Learning/01_KMeans_Iris_Elbow_Silhouette.ipynb) | Iris features, K-Means, inertia, elbow method, silhouette score, and cluster visualization |
+| [Hierarchical and DBSCAN notebook](Unsupervised-Learning/02_Hierarchical_Dendrogram_DBSCAN.ipynb) | Dendrograms, linkage, K-Means vs. hierarchical clustering, DBSCAN, noise points, and cluster evaluation |
+| [Unsupervised learning guide](Unsupervised-Learning/README.md) | Definitions, practical trade-offs, workflow, and official Scikit-learn documentation |
+
 ### Ensemble Learning
 
 | Notebook / Guide | What you'll learn |
