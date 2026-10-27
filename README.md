@@ -46,6 +46,9 @@ supervised-machine-learning/
 ├── requirements.txt
 ├── .gitignore
 ├── LICENSE
+├── .github/
+│   └── workflows/
+│       └── validate-notebooks.yml
 ├── Support-Vector-Machines/
 │   ├── README.md
 │   ├── 01_SVC_Implementation.ipynb
@@ -97,14 +100,14 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
-Install the dependencies and launch Jupyter:
+Install dependencies and launch Jupyter:
 
 ```bash
 python -m pip install -r requirements.txt
 jupyter notebook
 ```
 
-Open the notebook you want to explore and run its cells from top to bottom.
+Open a notebook and run its cells from top to bottom.
 
 ## Datasets
 
@@ -122,13 +125,15 @@ Choose metrics based on the problem and data. Avoid comparing models using unrel
 
 ## Implementation and validation status
 
-The notebooks are organized and revised, and supporting topic notes have been added. The notebooks have **not yet been verified by a complete run-all-cells execution pass in a clean environment**. Please execute each notebook from top to bottom after installing the dependencies before treating its numerical outputs as validated. Dataset download or library-version differences may affect execution.
+The notebooks are organized and revised, and supporting topic notes have been added. The repository includes a GitHub Actions workflow intended to execute the notebooks on pushes and pull requests. Check the **Actions** tab for the result of the latest workflow run.
+
+Notebook execution has not yet been independently confirmed from this chat session. Please check the workflow result or run each notebook from top to bottom after installing the dependencies before treating its numerical outputs as validated. Dataset access and library-version differences may affect execution.
 
 The Bagging Regressor and Boosting notebook is an additional learning example created to extend the original classification experiments; it is not part of the original uploaded notebook.
 
 ## Future improvements
 
-- Run all notebooks end-to-end in a clean environment and check outputs.
+- Confirm all notebooks execute end-to-end in a clean environment.
 - Add visual comparisons of model metrics.
 - Explore feature importance and model interpretation.
 - Add additional cross-validation and hyperparameter-search examples.
