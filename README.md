@@ -1,67 +1,33 @@
 # Supervised Machine Learning
 
-A hands-on Python repository documenting practical experiments with supervised machine learning. The project focuses on Support Vector Machines (SVC and SVR) and Ensemble Learning, with beginner-friendly notebooks, explanations, and model evaluation.
+A hands-on Python repository documenting practical experiments with supervised machine learning, focused on Support Vector Machines and Ensemble Learning. It is intended to be a beginner-friendly learning resource and a record of practical work.
 
-> This repository is a work in progress. The notebook links below will become available as the corresponding notebooks are added and reviewed.
-
-## Learning goals
-
-- Understand classification and regression workflows.
-- Explore Support Vector Classification (SVC) and Support Vector Regression (SVR).
-- Compare Linear, Polynomial, RBF, and Sigmoid SVM kernels.
-- Understand hyperparameters and model selection with `GridSearchCV`.
-- Explore Decision Trees, Random Forest, Bagging, Boosting, and out-of-bag (OOB) evaluation.
-- Evaluate models using metrics appropriate to each task.
-- Practice reproducible experiments and clear documentation.
-
-## Repository roadmap
+## Topics and notebooks
 
 ### Support Vector Machines
 
-| Planned notebook | What it covers |
-|---|---|
-| `01_SVC_Implementation.ipynb` | SVC classification workflow, feature scaling, kernel experiments, and classification metrics. |
-| `02_SVR_Implementation.ipynb` | SVR regression workflow, scaling, regression metrics, and hyperparameter search. |
-
-Topics to document alongside the notebooks include support vectors, decision boundaries, SVM hyperparameters, kernel functions, and `GridSearchCV`.
+- [SVC Implementation](Support-Vector-Machines/01_SVC_Implementation.ipynb) — classification with the Iris dataset, feature scaling, SVC evaluation, kernel experiments, and `C` comparisons.
+- [SVR Implementation](Support-Vector-Machines/02_SVR_Implementation.ipynb) — regression with the Diabetes dataset, kernel experiments, `GridSearchCV`, and `LinearSVR`.
+- [SVM concept notes](Support-Vector-Machines/README.md) — section guide, [introduction](Support-Vector-Machines/concepts/svm_introduction.md), [common kernels](Support-Vector-Machines/concepts/svm_kernels.md), and [hyperparameters](Support-Vector-Machines/concepts/svm_hyperparameters.md).
 
 ### Ensemble Learning
 
-| Planned notebook | What it covers |
-|---|---|
-| `01_Random_Forest_and_Bagging.ipynb` | Decision Tree, Random Forest, OOB evaluation, and Bagging Classifier experiments. |
+- [Random Forest and Bagging](Ensemble-Learning/01_Random_Forest_and_Bagging.ipynb) — Decision Tree, Random Forest with OOB evaluation, and Bagging Classifier experiments using the Titanic dataset.
+- [Ensemble concept notes](Ensemble-Learning/README.md) — section guide, [ensemble learning overview](Ensemble-Learning/concepts/ensemble_learning.md), [Bagging vs Boosting](Ensemble-Learning/concepts/bagging_vs_boosting.md), and [Decision Tree vs Random Forest](Ensemble-Learning/concepts/decision_tree_vs_random_forest.md).
 
-Planned extensions include Bagging Regressor, Boosting, and a comparison of tree-based ensemble approaches. These are roadmap items until their implementations are added and tested.
+> **Status:** The notebooks are organized baseline implementations. They still require a full execution/review pass and some improvements noted during code review, including feature scaling for SVR, using the selected `GridSearchCV` estimator, and leakage-safe preprocessing for the Titanic example. Planned topics such as Bagging Regressor and a practical Boosting notebook are not implemented yet.
 
-## Planned structure
+## Learning objectives
 
-```text
-supervised-machine-learning/
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── LICENSE
-├── Support-Vector-Machines/
-│   ├── README.md
-│   ├── 01_SVC_Implementation.ipynb
-│   ├── 02_SVR_Implementation.ipynb
-│   └── concepts/
-└── Ensemble-Learning/
-    ├── README.md
-    ├── 01_Random_Forest_and_Bagging.ipynb
-    └── concepts/
-```
+- Understand classification and regression workflows.
+- Explore SVC and SVR, their kernels, and key hyperparameters.
+- Learn model selection using cross-validation and `GridSearchCV`.
+- Understand Decision Trees, Random Forest, Bagging, Boosting, and OOB evaluation.
+- Choose suitable evaluation metrics and build reproducible experiments.
 
-The structure is a roadmap; folders and notebooks will be added as the existing work is organized.
+## Technologies
 
-## Technology stack
-
-- Python
-- Jupyter Notebook
-- NumPy and Pandas
-- Scikit-learn
-- Matplotlib
-- Seaborn
+Python, Jupyter Notebook, NumPy, Pandas, Scikit-learn, Matplotlib, and Seaborn.
 
 ## Setup
 
@@ -95,32 +61,21 @@ python -m pip install -r requirements.txt
 jupyter notebook
 ```
 
-Open a notebook and run its cells in order. Individual notebooks may have additional dataset or environment requirements; these should be documented in their own README files.
+Open a notebook and run its cells in order. The Titanic notebook downloads its dataset via Seaborn, so it needs network access the first time it loads the dataset. Scikit-learn supplies the Iris and Diabetes datasets.
 
-## Datasets and evaluation
+## Evaluation metrics
 
-The current learning plan uses familiar educational datasets, including Iris for classification, Diabetes for regression, and Titanic for classification experiments. The final notebook documentation should identify the exact dataset source and preprocessing used.
+The notebooks currently demonstrate accuracy and classification reports for classification, and R² for regression. Improvements planned include confusion matrices, MAE/RMSE for regression, and more consistent cross-validation-based comparisons.
 
-Candidate evaluation metrics include:
+## Next improvements
 
-- **Classification:** accuracy, precision, recall, F1-score, and confusion matrix.
-- **Regression:** R², Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE).
-
-Use metrics appropriate to each task and evaluate model-selection choices on training data with cross-validation before making a final assessment on held-out test data.
-
-## Contribution and learning approach
-
-This is a personal learning portfolio. Existing implementations will be preserved where practical. Corrections, refactoring, and new examples will be documented so the distinction between original experiments and later improvements remains clear.
-
-## Future improvements
-
-- Add and test the original SVC, SVR, and Random Forest notebooks.
-- Explain SVM kernel types and key hyperparameters.
-- Demonstrate robust preprocessing with Scikit-learn pipelines.
-- Compare models with appropriate evaluation metrics and cross-validation.
+- Add the RBF kernel to the explicit SVC kernel comparison.
+- Put scaling and model fitting into Scikit-learn pipelines where appropriate.
+- Avoid using the test set repeatedly for hyperparameter choices.
+- Use `grid_search.best_estimator_` after GridSearchCV.
+- Add reproducible `random_state` settings and improve categorical preprocessing in the Titanic experiment.
 - Add Bagging Regressor and Boosting examples.
-- Add concise concept notes, diagrams, and reproducible results.
 
 ## License
 
-See [LICENSE](LICENSE) for license terms.
+See [LICENSE](LICENSE) for licensing terms.
