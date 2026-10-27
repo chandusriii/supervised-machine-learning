@@ -4,8 +4,8 @@ This section explores ensemble methods through hands-on classification and regre
 
 ## Notebooks
 
-- [Random Forest and Bagging](01_Random_Forest_and_Bagging.ipynb) — compares a Decision Tree baseline, Random Forest with out-of-bag (OOB) evaluation, and Bagging Classifiers using the Titanic dataset.
-- [Bagging Regressor and Boosting](02_Bagging_Regressor_and_Boosting.ipynb) — an additional learning example comparing Decision Tree regression, Bagging Regressor, AdaBoost Regressor, and Gradient Boosting Regressor using the Diabetes dataset.
+- [01 — Random Forest and Bagging](01_Random_Forest_and_Bagging.ipynb): compares a Decision Tree baseline, Random Forest with out-of-bag (OOB) evaluation, and Bagging Classifiers using the Titanic dataset.
+- [02 — Bagging Regressor and Boosting](02_Bagging_Regressor_and_Boosting.ipynb): additional learning example comparing Decision Tree regression, Bagging Regressor, AdaBoost Regressor, and Gradient Boosting Regressor using the Diabetes dataset. This extension was added separately from the original uploaded notebook.
 
 ## Concept notes
 
@@ -16,10 +16,8 @@ This section explores ensemble methods through hands-on classification and regre
 
 ## Key ideas
 
-- Bagging aggregates models trained on bootstrap samples.
-- Random Forest also introduces randomness in feature selection when growing trees.
-- OOB evaluation uses training observations left out of a tree's bootstrap sample.
-- Boosting builds an ensemble sequentially, with each stage attempting to improve the existing ensemble.
-- Compare methods on the same held-out data and use metrics suited to classification or regression.
-
-The Bagging Regressor and Boosting notebook is an additional learning example created to extend the original classification experiments; it is not part of the original uploaded code.
+- Bagging aggregates learners trained on bootstrap samples and can reduce variance.
+- Random Forest combines bootstrap samples with randomized feature selection when growing trees.
+- OOB evaluation uses training observations left out of each tree's bootstrap sample; it complements but does not replace held-out test evaluation.
+- Boosting builds an ensemble sequentially, with each stage improving the ensemble according to the boosting algorithm.
+- Compare methods on the same split and use metrics suited to the prediction task.
