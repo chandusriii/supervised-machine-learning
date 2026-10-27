@@ -13,7 +13,8 @@ A hands-on Python repository for learning supervised machine learning through pr
 ### Ensemble Learning
 
 - [Random Forest and Bagging](Ensemble-Learning/01_Random_Forest_and_Bagging.ipynb) — Decision Tree baseline, Random Forest with OOB evaluation, and Bagging Classifiers using Titanic data.
-- [Ensemble section guide](Ensemble-Learning/README.md) | [Introduction](Ensemble-Learning/concepts/ensemble_learning.md) | [Bagging vs Boosting](Ensemble-Learning/concepts/bagging_vs_boosting.md) | [Decision Tree vs Random Forest](Ensemble-Learning/concepts/decision_tree_vs_random_forest.md)
+- [Bagging Regressor and Boosting](Ensemble-Learning/02_Bagging_Regressor_and_Boosting.ipynb) — additional comparison of Decision Tree regression, Bagging Regressor, AdaBoost Regressor, and Gradient Boosting Regressor.
+- [Ensemble section guide](Ensemble-Learning/README.md) | [Introduction](Ensemble-Learning/concepts/ensemble_learning.md) | [Bagging vs Boosting](Ensemble-Learning/concepts/bagging_vs_boosting.md) | [Decision Tree vs Random Forest](Ensemble-Learning/concepts/decision_tree_vs_random_forest.md) | [OOB Evaluation](Ensemble-Learning/concepts/oob_evaluation.md)
 
 ## Learning goals
 
@@ -63,16 +64,15 @@ Open a notebook and run its cells in order. The Iris and Diabetes datasets are p
 
 ## Implementation status
 
-The repository includes SVC and SVR notebooks and a Random Forest/Bagging notebook. The SVM notebooks cover all four requested kernel types across the SVC examples, plus GridSearchCV. The ensemble notebook includes Decision Tree, Random Forest, OOB evaluation, and Bagging Classifier examples. Bagging Regressor and a practical Boosting notebook remain planned extensions rather than completed implementations.
+The repository includes SVC and SVR notebooks and two ensemble notebooks. The SVC example compares all four requested kernel types and uses cross-validation for tuning. The SVR example scales input features and uses the estimator selected by GridSearchCV. The Random Forest example uses a preprocessing pipeline, compares Decision Tree and Bagging models, and reports OOB performance. An additional notebook introduces Bagging Regressor, AdaBoost, and Gradient Boosting using a consistent train/test split.
 
-The notebooks are organized and have been improved for scaling, preprocessing, and model selection. They still need a full run-all-cells execution pass in a local environment before all results can be considered verified.
+The notebooks have been organized and revised, but a complete run-all-cells execution pass has not yet been verified in this environment. Please run each notebook from top to bottom after installing the dependencies before treating its results as validated.
 
-## Next improvements
+## Future improvements
 
 - Execute every notebook from top to bottom and capture clean outputs.
-- Add Bagging Regressor and Boosting examples.
-- Expand the comparison of classification and regression metrics.
-- Document feature importance and model interpretation.
+- Add additional cross-validation and model interpretation examples.
+- Expand feature importance and error analysis.
 
 ## License
 
