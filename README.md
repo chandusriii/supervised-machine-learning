@@ -40,6 +40,7 @@ The goal is to keep the examples beginner-friendly while making the experiments 
 ## Learning objectives
 
 - Understand supervised classification and regression.
+- Learn unsupervised learning and clustering methods, including K-Means, hierarchical clustering, and DBSCAN.
 - Explore SVM kernels and important model hyperparameters.
 - Use pipelines and cross-validation to tune models.
 - Learn the differences between Decision Trees, Random Forest, Bagging, and Boosting.
