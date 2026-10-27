@@ -1,22 +1,24 @@
 # Ensemble Learning
 
-This section explores how combining models can improve predictive performance and robustness. Existing experiments focus on Decision Trees, Random Forest, and Bagging Classifiers.
+This section explores ensemble methods through hands-on classification examples.
 
-## Planned notebooks
+## Notebook
 
-- `01_Random_Forest_and_Bagging.ipynb` — Decision Tree baseline, Random Forest, out-of-bag evaluation, and Bagging Classifier examples.
+- [Random Forest and Bagging](01_Random_Forest_and_Bagging.ipynb) — compares a Decision Tree baseline, Random Forest with out-of-bag (OOB) evaluation, and two Bagging Classifiers using the Titanic dataset.
 
-## Concepts
+## Concept notes
 
-- Ensemble learning overview
-- Bagging versus Boosting
-- Decision Tree versus Random Forest
-- Bootstrap samples and out-of-bag (OOB) evaluation
-- Bagging Classifier and Bagging Regressor
-- Comparing models using appropriate metrics
+- [Ensemble learning introduction](concepts/ensemble_learning.md)
+- [Bagging vs Boosting](concepts/bagging_vs_boosting.md)
+- [Decision Tree vs Random Forest](concepts/decision_tree_vs_random_forest.md)
 
-## Learning guidelines
+## Key ideas
 
-Use consistent train/test splits when comparing models. Keep imputation and encoding inside a preprocessing pipeline fitted on training data. Set random seeds where suitable for reproducible experiments. OOB evaluation is available for compatible bootstrap-based estimators when enabled, but it does not replace careful test-set evaluation in every setting.
+- Bagging aggregates models trained on bootstrap samples.
+- Random Forest also introduces randomness in feature selection when growing trees.
+- OOB evaluation uses training observations left out of a tree's bootstrap sample.
+- Compare methods on the same held-out data and use classification metrics suitable for the task.
 
-Boosting and Bagging Regressor are planned extensions until their implementations are added and tested.
+## Planned additions
+
+Bagging Regressor and a practical Boosting example are roadmap items and have not yet been added as notebooks.
