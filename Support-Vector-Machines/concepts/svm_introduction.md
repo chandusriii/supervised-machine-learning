@@ -20,3 +20,4 @@ SVM optimization and distance-based kernel calculations can be sensitive to feat
 - `epsilon`: width of the insensitive tube in SVR.
 
 Parameter effects depend on the dataset and should be assessed using cross-validation rather than assumed in advance.
+
